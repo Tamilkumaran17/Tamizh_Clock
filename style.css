@@ -10,8 +10,8 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: rgb(19,17,52);
-    background: linear-gradient(148deg, rgba(19,17,52,1) 0%, rgba(33,121,9,1) 56%, rgba(63,193,203,1) 100%);
+    /* background: rgb(19,17,52); */
+    /* background: linear-gradient(148deg, rgba(19,17,52,1) 0%, rgba(33,121,9,1) 56%, rgba(63,193,203,1) 100%); */
 }
 
 .container{
