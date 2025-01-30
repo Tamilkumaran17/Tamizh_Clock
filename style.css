@@ -1,114 +1,137 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
-
 }
-body{
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    /* background: rgb(19,17,52); */
-    /* background: linear-gradient(148deg, rgba(19,17,52,1) 0%, rgba(33,121,9,1) 56%, rgba(63,193,203,1) 100%); */
+    /* background: linear-gradient(148deg, rgba(19, 17, 52, 1) 0%, rgba(33, 121, 9, 1) 56%, rgba(63, 193, 203, 1) 100%); */
+    flex-direction: column;
+    text-align: center;
 }
 
-.container{
-
+.container {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
-.clock{
-    width: 400px;
-    height: 400px;
+.clock {
+    width: 300px; 
+    height: 300px;
     border-radius: 50%;
     background-color: rgb(206, 204, 204);
-    border:2px solid rgba(147, 24, 200, 0.61);
-    box-shadow: 0px 0px 50px rgb(0, 0, 0); 
+    border: 2px solid rgba(147, 24, 200, 0.61);
+    box-shadow: 0px 0px 30px rgb(0, 0, 0);
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-
 }
 
-.clock span{
+.clock span {
     position: absolute;
     transform: rotate(calc(30deg * var(--i)));
-    inset: 12px;
+    inset: 8px;
     text-align: center;
-
 }
-.clock span b{
-    transform: rotate(calc(-30deg *var(--i)));
+
+.clock span b {
+    transform: rotate(calc(-30deg * var(--i)));
     display: inline-block;
-    font-size: 20px;
+    font-size: 16px;
 }
 
-.clock::before{
+.clock::before {
     content: '';
     position: absolute;
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background-color: #000000;
     z-index: 6;
 }
 
-.hand{
+.hand {
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    
 }
 
-.hand i{
+.hand i {
     position: absolute;
-    background-color : var(--clr);
-    width: 6px;
+    background-color: var(--clr);
+    width: 4px;
     height: var(--h);
-    border-radius: 8px;
+    border-radius: 6px;
 }
 
 #hour i {
-    background-color: var(--clr);
-    width: 10px;
-    height: 80px;
-    border-radius: 15px ;
+    width: 8px;
+    height: 60px;
+    border-radius: 12px;
 }
-
 
 #min i {
-    background-color: var(--clr);
-    width: 8px;
-    height: 100px;
-    border-radius: 0px 8px 0px 8px;
+    width: 6px;
+    height: 80px;
+    border-radius: 0px 6px 0px 6px;
 }
 
-
 #sec i {
-    background-color: var(--clr);
-    width:5px;
-    height: 135px;
+    width: 3px;
+    height: 110px;
     border-radius: 50%;
-    box-shadow: rgb(191, 19, 19);
 }
 
 #date {
-    margin-top: 20px;
-    font-size: 24px;
-    font-family:'InaiMathi', 'Tamil Sangam MN',
-    /* For iOS 3+ and Mac */ 'Nirmala UI', Latha, /* For Windows */ Bamini,
-    Roboto, /* For Android 4+ */ Noto, 'Noto Sans Tamil', /* For Ubuntu */
-      sans-serif; /* For Everything else */
+    margin-top: 15px;
+    font-size: 20px;
+    font-family: 'InaiMathi', 'Tamil Sangam MN', 'Nirmala UI', Latha, Bamini, Roboto, Noto, 'Noto Sans Tamil', sans-serif;
 }
+
 #tamilDay {
-    font-size: 18px;
+    font-size: 16px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Responsive for Tablets */
+@media (min-width: 600px) {
+    .clock {
+        width: 350px;
+        height: 350px;
+    }
+    .clock span b {
+        font-size: 18px;
+    }
+    #date {
+        font-size: 22px;
+    }
+    #tamilDay {
+        font-size: 18px;
+    }
+}
+
+/* Responsive for Larger Screens */
+@media (min-width: 768px) {
+    .clock {
+        width: 400px;
+        height: 400px;
+    }
+    .clock span b {
+        font-size: 20px;
+    }
+    #date {
+        font-size: 24px;
+    }
+    #tamilDay {
+        font-size: 20px;
+    }
 }
